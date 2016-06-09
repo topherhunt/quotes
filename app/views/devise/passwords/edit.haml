@@ -1,21 +1,18 @@
-.row
-  .col-sm-6.col-sm-offset-3
+.centered-600
+  %h2 Change your password
 
-    %h2 Change your password
+  = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f|
+    = devise_error_messages!
+    .row.row-padded
+      .col-xs-3= f.label :password, "New password"
+      .col-xs-9= f.password_field :password, autofocus: true, autocomplete: "off", class: "form-control"
+    .row.row-padded
+      .col-xs-3= f.label :password_confirmation, "Confirm new password"
+      .col-xs-9= f.password_field :password_confirmation, autocomplete: "off", class: "form-control"
+    .row.row-padded
+      .col-xs-3
+      .col-xs-9
+        = f.hidden_field :reset_password_token
+        = f.submit "Change my password", class: "btn btn-primary"
 
-    = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f|
-      = devise_error_messages!
-      = f.hidden_field :reset_password_token
-
-      %table.form
-        %tr
-          %td= f.label :password, "New password"
-          %td= f.password_field :password, autofocus: true, autocomplete: "off", class: 'form-control'
-        %tr
-          %td= f.label :password_confirmation, "Confirm new password"
-          %td= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control'
-        %tr
-          %td
-          %td= f.submit "Change my password", class: 'btn btn-primary'
-
-    = render "devise/shared/links"
+  = render "devise/shared/links"

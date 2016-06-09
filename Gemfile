@@ -1,34 +1,42 @@
 
 source 'https://rubygems.org'
-ruby '2.2.0'
+ruby '2.3.1'
 
 gem 'rails'
-gem 'mysql2', '~> 0.3.18' # for compatibility with Rails 4.2.4
+gem 'pg'
 gem 'figaro'
-gem 'exception_notification'
+gem 'rollbar'
 
-gem 'devise'
 gem 'bcrypt-ruby'
+gem 'devise'
 gem 'will_paginate'
+gem 'nokogiri', '1.6.7.2' # Compile errors on 1.6.8
 
-gem 'haml-rails'
-gem 'sass-rails'
 gem 'bootstrap-sass'
 gem 'bootstrap-will_paginate'
-gem 'uglifier'
 gem 'coffee-rails'
+gem 'font-awesome-rails'
+gem 'haml-rails'
 gem 'jquery-rails'
+gem 'sass-rails'
+gem 'uglifier'
 
-group :development, :test do
-  gem 'rspec-rails'
-  gem 'quiet_assets'
-  gem 'launchy' # for save_and_open_page
-  gem 'pry'
+group :development do
   gem 'web-console'
 end
 
-group :test do
-  gem 'capybara'
-  gem 'factory_girl_rails'
+group :development, :test do
+  gem 'minitest-rails'
+  gem 'm'
+  gem 'factory_girl'
   gem 'mocha'
+  gem 'pry'
+  gem 'binding_of_caller'
+  gem 'quiet_assets'
+end
+
+group :test do
+  gem 'maxitest'
+  gem 'minitest-rails-capybara'
+  gem 'capybara-webkit'
 end
