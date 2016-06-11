@@ -8,6 +8,11 @@
     .col-sm-3.strong Source
     .col-sm-9= @quote.source
   .row.row-padded
+    .col-sm-3.strong Tags
+    .col-sm-9
+      - @quote.tag_list.each do |tag|
+        .label.label-default= tag
+  .row.row-padded
     .col-sm-3.strong Weight
     .col-sm-9= @quote.weight
   .row.row-padded

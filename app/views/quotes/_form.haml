@@ -6,7 +6,14 @@
     .col-xs-3= f.label :source
     .col-xs-9= f.text_field :source, class: "form-control"
   .row.row-padded
-    .col-xs-3= f.label :weight
+    .col-xs-3
+      = f.label :tag_list
+      .small Separate tags with commas
+    .col-xs-9= f.text_field :tag_list, class: "form-control"
+  .row.row-padded
+    .col-xs-3
+      = f.label :weight
+      .small Decimal, eg. 0.5 or 2.0.
     .col-xs-9= f.text_field :weight, class: "form-control"
   .row.row-padded
     .col-xs-3

@@ -7,6 +7,7 @@ gem 'pg'
 gem 'figaro'
 gem 'rollbar'
 
+gem 'acts-as-taggable-on'
 gem 'bcrypt-ruby'
 gem 'devise'
 gem 'will_paginate'

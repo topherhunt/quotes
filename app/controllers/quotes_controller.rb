@@ -6,7 +6,7 @@ class QuotesController < ApplicationController
   end
 
   def new
-    @quote = Quote.new
+    @quote = Quote.new(weight: 1)
   end
 
   def create
@@ -44,6 +44,6 @@ class QuotesController < ApplicationController
   private
 
   def quote_params
-    params.require(:quote).permit(:quote, :source, :weight)
+    params.require(:quote).permit(:quote, :source, :weight, :tag_list)
   end
 end
