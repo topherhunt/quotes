@@ -24,4 +24,7 @@
           &nbsp;
           = link_to fa_icon("trash"), quote_path(quote), class: "text-danger", method: :delete, "data-confirm": "Really delete this quote?"
     %tr
-      %td{colspan: 10}= link_to fa_icon("plus"), new_quote_path
+      %td{colspan: 10}
+        = link_to fa_icon("plus"), new_quote_path
+        &nbsp;
+        = link_to "Export to JSON", quotes_path(:json, params)

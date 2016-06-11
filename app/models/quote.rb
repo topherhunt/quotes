@@ -14,4 +14,10 @@ class Quote < ActiveRecord::Base
       quote
     end
   end
+
+  def rendered_json
+    { quote: quote,
+      source: source,
+      weight: weight }
+  end
 end

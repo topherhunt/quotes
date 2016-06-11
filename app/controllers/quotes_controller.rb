@@ -4,6 +4,10 @@ class QuotesController < ApplicationController
   def index
     @quotes = current_user.quotes
     filter_quotes
+    respond_to do |format|
+      format.html
+      format.json { render json: @quotes.map(&:rendered_json) }
+    end
   end
 
   def new
