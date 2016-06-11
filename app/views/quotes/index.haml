@@ -1,25 +1,27 @@
-%h1 Quotes
+.centered-800
+  %h1 Quotes
+  = render partial: "filter"
 
-%table.table.table-striped
-  %tr
-    %th Source
-    %th Quote
-    %th Tags
-    %th Weight
-    %th
-  - @quotes.each do |quote|
+  %table.table.table-striped
     %tr
-      %td= quote.source
-      %td= quote.quote_snippet
-      %td
-        - quote.tag_list.each do |tag|
-          .label.label-default= tag
-      %td= quote.weight
-      %td
-        = link_to fa_icon("eye"), quote_path(quote)
-        &nbsp;
-        = link_to fa_icon("pencil"), edit_quote_path(quote), class: "text-warning"
-        &nbsp;
-        = link_to fa_icon("trash"), quote_path(quote), class: "text-danger", method: :delete, "data-confirm": "Really delete this quote?"
-  %tr
-    %td{colspan: 10}= link_to fa_icon("plus"), new_quote_path
+      %th Source
+      %th Quote
+      %th Tags
+      %th Weight
+      %th
+    - @quotes.each do |quote|
+      %tr
+        %td= quote.source
+        %td= quote.quote_snippet
+        %td
+          - quote.tag_list.each do |tag|
+            .label.label-default= tag
+        %td= quote.weight
+        %td
+          = link_to fa_icon("eye"), quote_path(quote)
+          &nbsp;
+          = link_to fa_icon("pencil"), edit_quote_path(quote), class: "text-warning"
+          &nbsp;
+          = link_to fa_icon("trash"), quote_path(quote), class: "text-danger", method: :delete, "data-confirm": "Really delete this quote?"
+    %tr
+      %td{colspan: 10}= link_to fa_icon("plus"), new_quote_path

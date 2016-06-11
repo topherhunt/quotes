@@ -3,6 +3,7 @@ class QuotesController < ApplicationController
 
   def index
     @quotes = current_user.quotes
+    filter_quotes
   end
 
   def new
@@ -45,5 +46,19 @@ class QuotesController < ApplicationController
 
   def quote_params
     params.require(:quote).permit(:quote, :source, :weight, :tag_list)
+  end
+
+  def filter_quotes
+    if f = params[:filter]
+      if f[:tag].present?
+        @quotes = @quotes.tagged_with(f[:tag])
+      end
+
+      if f[:full_text].present?
+        @quotes = @quotes.where("quote ILIKE ? OR source ILIKE ?",
+          "%#{f[:full_text]}%",
+          "%#{f[:full_text]}%")
+      end
+    end
   end
 end

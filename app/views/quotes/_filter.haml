@@ -1,0 +1,15 @@
+= form_tag(quotes_path, method: :get) do
+  %p
+    %span.nowrap
+      Filter by tag
+      = select_tag "filter[tag]", options_for_select([[""]] + ActsAsTaggableOn::Tag.pluck(:name).sort, params.dig(:filter, :tag)), class: "form-control", style: "display: inline-block; width: 150px;"
+    &nbsp;
+    %span.nowrap
+      Full text
+      = text_field_tag "filter[full_text]", params.dig(:filter, :full_text), class: "form-control", style: "display: inline-block; width: 150px;"
+    &nbsp;
+    %span.nowrap
+      = submit_tag "Filter", class: "btn btn-primary btn-sm"
+      &nbsp;
+      - if params[:filter].present?
+        = link_to fa_icon("times") + " clear", quotes_path
