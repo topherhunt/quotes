@@ -10,12 +10,12 @@ default: &default
 
 development:
   <<: *default
-  database: vanilla_app_dev
+  database: quotes_app_dev
 
 test:
   <<: *default
-  database: vanilla_app_test
+  database: quotes_app_test
 
 production:
   <<: *default
-  database: vanilla_app_prod
+  database: quotes_app_prod

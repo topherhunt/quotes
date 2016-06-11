@@ -1,6 +1,4 @@
-# Topher's Rails 4.2.0 app template
-
-This is a starter template I'll use when building new apps.
+# Quotes App
 
 ### Components
 
@@ -11,27 +9,6 @@ This is a starter template I'll use when building new apps.
 - ApplicationHelper #show_errors_for model validation helper
 - Basic Minitest setup with starter tests
 - Secret token is dynamically generated each time the server starts up
-
-### To create a new app from it:
-
-- Clone this repository
-- `git remote remove origin`
-- Review `Gemfile`
-- `bundle install`
-- Review `.gitignore`
-- Replace `VanillaApp` and `vanilla_app`
-- Review `config/initializers/devise.rb`
-- Review Users migration. If any other fields are needed, update
-  `app/views/devise/users/` templates and uncomment the params
-  customizer in `ApplicationController`.
-- Create `config/application.yml` (Figaro; see template).
-  Ensure a unique Devise salt and pepper.
-- Create `config/database.yml` (see template)
-- `rake db:create db:migrate db:seed test:prepare`
-- Run specs
-- Rewrite this readme
-- Push up to new repository
-- Start on the fun stuff!
 
 ### Heroku prep
 

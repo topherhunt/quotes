@@ -1,5 +1,5 @@
 HOSTNAME:          www.example.com
-SUPPORT_EMAIL:     support@vanilla_app.com
+SUPPORT_EMAIL:     support@quotes_app.com
 MAILGUN_USERNAME: blah
 MAILGUN_PASSWORD: blah
 ROLLBAR_ACCESS_TOKEN: blah

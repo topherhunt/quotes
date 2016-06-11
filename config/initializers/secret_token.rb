@@ -22,4 +22,4 @@ def secure_token
   end
 end
 
-VanillaApp::Application.config.secret_key_base = secure_token
+QuotesApp::Application.config.secret_key_base = secure_token

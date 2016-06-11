@@ -76,7 +76,7 @@ Rails.application.configure do
   # Email us if an exception is raised in the production environment.
   config.middleware.use ExceptionNotification::Rack,
     email: {
-      email_prefix:         "[VanillaApp ERROR]",
+      email_prefix:         "[QuotesApp ERROR]",
       sender_address:       ENV['SUPPORT_EMAIL'],
       exception_recipients: [ENV['SUPPORT_EMAIL']],
       background_sections:  ['backtrace', 'data']
