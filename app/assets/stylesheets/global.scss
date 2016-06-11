@@ -19,12 +19,14 @@
 .clear-float  { clear: both; }
 .nowrap { white-space: nowrap; }
 .em { font-style: italic; }
+.strong { font-weight: bold; }
 .field_with_errors { border-bottom: 2px solid #a94442; }
 
 // Bootstrap fixes
 
 .label a { color: #fff !important; }
 .text-danger { color: #a94442 !important; }
+table.table { width: auto; }
 
 // Font Awesome fixes
 

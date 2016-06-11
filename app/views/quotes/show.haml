@@ -1,0 +1,18 @@
+.centered-600
+  %h1 Quote #{@quote.id}
+
+  .row.row-padded
+    .col-sm-3.strong Quote
+    .col-sm-9= @quote.quote # TODO: Sanitize
+  .row.row-padded
+    .col-sm-3.strong Source
+    .col-sm-9= @quote.source
+  .row.row-padded
+    .col-sm-3.strong Weight
+    .col-sm-9= @quote.weight
+  .row.row-padded
+    .col-sm-3.strong Created at
+    .col-sm-9= print_date(@quote.created_at)
+  .row.row-padded
+    .col-sm-3.strong Updated at
+    .col-sm-9= print_date(@quote.updated_at)

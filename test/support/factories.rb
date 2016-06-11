@@ -4,4 +4,11 @@ FactoryGirl.define do
     password              "foobar01"
     password_confirmation "foobar01"
   end
+
+  factory :quote do
+    association :user
+    quote "Some random quote"
+    source "Topher"
+    weight 1
+  end
 end

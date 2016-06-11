@@ -1,0 +1,13 @@
+= form_for @quote do |f|
+  .row.row-padded
+    .col-xs-3= f.label :quote
+    .col-xs-9= f.text_area :quote, class: "form-control", rows: 3
+  .row.row-padded
+    .col-xs-3= f.label :source
+    .col-xs-9= f.text_field :source, class: "form-control"
+  .row.row-padded
+    .col-xs-3= f.label :weight
+    .col-xs-9= f.text_field :weight, class: "form-control"
+  .row.row-padded
+    .col-xs-3
+    .col-sm-9= f.submit "Save", class: "btn btn-primary"

@@ -14,9 +14,4 @@ module ApplicationHelper
   def show_errors_for (object)
     render 'shared/errors', object: object if object.errors.any?
   end
-
-  def glyph (name)
-    content_tag :span, '', class: "glyphicon glyphicon-#{name.to_s}"
-  end
-
 end
