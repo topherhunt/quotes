@@ -1,0 +1,10 @@
+<p>It's a new day! Take a few breaths to close your eyes and reflect on the following quote:</p>
+
+<p>
+  <strong><%= @quote.quote %></strong>
+  <% if @quote.source.present? %>
+    <br><em>&mdash; <%= @quote.source %></em>
+  <% end %>
+</p>
+
+<p><%= link_to "Manage quotes & settings", quotes_url %></p>

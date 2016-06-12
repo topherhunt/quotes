@@ -1,0 +1,11 @@
+It's a new day! Take a few breaths to close your eyes and reflect on the following quote:
+
+=====
+<%= @quote.quote %>
+<%- if @quote.source.present? -%>
+ -- <%= @quote.source %>
+<%- end -%>
+=====
+
+Click the link below to manage your quotes and settings:
+<%= quotes_url %>
