@@ -41,3 +41,7 @@ group :test do
   gem 'minitest-rails-capybara'
   gem 'capybara-webkit'
 end
+
+group :production do
+  gem "rails_12factor"
+end
