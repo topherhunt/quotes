@@ -11,13 +11,14 @@
       %th
     - @quotes.each do |quote|
       %tr
-        %td= quote.source
-        %td= quote.quote_snippet
+        %td.nowrap= quote.source
+        %td
+          %div.nowrap{style: "max-width: 400px;"}= quote.quote_snippet
         %td
           - quote.tag_list.each do |tag|
             .label.label-default= tag
         %td= quote.weight
-        %td
+        %td.nowrap
           = link_to fa_icon("eye"), quote_path(quote)
           &nbsp;
           = link_to fa_icon("pencil"), edit_quote_path(quote), class: "text-warning"

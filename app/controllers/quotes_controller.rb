@@ -17,7 +17,7 @@ class QuotesController < ApplicationController
   def create
     @quote = Quote.new(quote_params.merge(user: current_user))
     if @quote.save
-      redirect_to quotes_path, notice: "Quote created."
+      redirect_to new_quote_path, notice: "Quote created. Create another?"
     else
       render "new"
     end
