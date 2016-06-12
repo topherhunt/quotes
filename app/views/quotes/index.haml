@@ -13,7 +13,8 @@
       %tr
         %td.nowrap= quote.source
         %td
-          %div.nowrap{style: "max-width: 400px;"}= quote.quote_snippet
+          %div.nowrap{style: "max-width: 400px; overflow: hidden;"}
+            = quote.quote_snippet
         %td
           - quote.tag_list.each do |tag|
             .label.label-default= tag
