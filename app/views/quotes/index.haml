@@ -2,6 +2,11 @@
   %h1 Quotes
   = render partial: "filter"
 
+  %p
+    = link_to fa_icon("plus") + " New quote", new_quote_path
+    &nbsp;
+    = link_to "Export to JSON", quotes_path(:json, params)
+
   %table.table.table-striped
     %tr
       %th Source
@@ -11,10 +16,12 @@
       %th
     - @quotes.each do |quote|
       %tr
-        %td.nowrap= quote.source
         %td
-          %div.nowrap{style: "max-width: 400px; overflow: hidden;"}
-            = quote.quote_snippet
+          .nowrap{style: "max-width: 150px; overflow: hidden;"}
+            = quote.source.html_safe
+        %td
+          .nowrap{style: "max-width: 400px; overflow: hidden;"}
+            = quote.quote_snippet.html_safe
         %td
           - quote.tag_list.each do |tag|
             .label.label-default= tag
@@ -25,8 +32,3 @@
           = link_to fa_icon("pencil"), edit_quote_path(quote), class: "text-warning"
           &nbsp;
           = link_to fa_icon("trash"), quote_path(quote), class: "text-danger", method: :delete, "data-confirm": "Really delete this quote?"
-    %tr
-      %td{colspan: 10}
-        = link_to fa_icon("plus"), new_quote_path
-        &nbsp;
-        = link_to "Export to JSON", quotes_path(:json, params)

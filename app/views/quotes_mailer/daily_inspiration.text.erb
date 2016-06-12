@@ -1,7 +1,7 @@
 It's a new day! Take a few breaths to close your eyes and reflect on the following quote:
 
 =====
-<%= @quote.quote %>
+<%= sanitize(@quote.quote, tags: []) %>
 <%- if @quote.source.present? -%>
  -- <%= @quote.source %>
 <%- end -%>

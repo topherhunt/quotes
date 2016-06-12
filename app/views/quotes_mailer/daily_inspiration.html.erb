@@ -1,7 +1,7 @@
 <p>It's a new day! Take a few breaths to close your eyes and reflect on the following quote:</p>
 
 <p>
-  <strong><%= @quote.quote %></strong>
+  <span style="font-size: 150%;"><%= @quote.quote.html_safe %></span>
   <% if @quote.source.present? %>
     <br><em>&mdash; <%= @quote.source %></em>
   <% end %>

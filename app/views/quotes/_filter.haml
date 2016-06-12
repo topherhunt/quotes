@@ -2,7 +2,7 @@
   %p
     %span.nowrap
       Filter by tag
-      = select_tag "filter[tag]", options_for_select([[""]] + ActsAsTaggableOn::Tag.pluck(:name).sort, params.dig(:filter, :tag)), class: "form-control", style: "display: inline-block; width: 150px;"
+      = select_tag "filter[tag]", options_for_select([[""]] + Quote.tag_counts.pluck(:name).sort, params.dig(:filter, :tag)), class: "form-control", style: "display: inline-block; width: 150px;"
     &nbsp;
     %span.nowrap
       Full text
