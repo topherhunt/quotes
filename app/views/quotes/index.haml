@@ -32,3 +32,8 @@
           = link_to fa_icon("pencil"), edit_quote_path(quote), class: "text-warning"
           &nbsp;
           = link_to fa_icon("trash"), quote_path(quote), class: "text-danger", method: :delete, "data-confirm": "Really delete this quote?"
+
+  %p
+    = link_to fa_icon("plus") + " New quote", new_quote_path
+    &nbsp;
+    = link_to "Export to JSON", quotes_path(:json, params)
