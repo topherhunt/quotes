@@ -2,7 +2,7 @@ class QuotesController < ApplicationController
   before_action :require_login
 
   def index
-    @quotes = current_user.quotes
+    @quotes = current_user.quotes.order("created_at DESC")
     filter_quotes
     respond_to do |format|
       format.html
